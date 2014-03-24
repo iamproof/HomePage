@@ -1,4 +1,4 @@
 HomePage
 ========
 
-Python/Django projects
+Python/Django project
