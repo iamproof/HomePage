@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	
+
+	{% if messages %}
+		<div id="messages">	
+			{% for message in messages %}
+				<p>{{ message }}</p>
+			{% endfor %}
+		</div>	
+	{% endif %}
+
+
+	<h2> Confirmation </h2>
+	<p><h3>Write your username, and check your e-mail for the Validation number, then copy and paste it to Validate number form and press submit. </h3></p>
+	
+
+	<table>
+	<form id="form" method="post"> {% csrf_token %}
+	<tr><th><label for="id_user">User:&nbsp;</label></th>
+	<td><input maxlength="30" name="user" type="text"/></td></tr>
+	<tr><th><label for="id_validate_number">Validate number:&nbsp;</label></th>
+	<td><input name="validate_number"/></td></tr>
+	<td><input id="input" type="submit" value="Submit" /> </td>
+	</form>
+	</table>
+	
+	
+	
+{% endblock %}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> My Site </title>
+	<meta http-equiv="content-type" content="text/html" charset="iso-8859-1" />
+	<!-- <meta http-equiv="content-type" content="text/html" charset="utf-8" /> -->
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+</head>
+
+<body>
+
+	<div id="top">
+	</div>
+
+
+	<div id="sidebar">
+ 		<h1><a href="">Home/About</a></h1>
+		<p> Some examples of Python/Django programs and projects. </p>
+		<ol id="nav">
+    		<li><a href="http://localhost:8000/auth">Authentication/Login</a></li>
+    		{% if user.is_active %}
+    		<li><a href="http://localhost:8000/accounts">My Account</a></li>
+    		{% endif %}
+    		<li><a href="http://localhost:8000/news">News(Web Scraping)</a></li>
+		    <li><a href="http://localhost:8000/get_image">Images(Web Scraping)</a></li>
+		    <li><a href="http://localhost:8000/blog">Blog with Comments</a></li>
+		    <li><a href="http://localhost:8000/polls">Polls</a></li>
+		    <li><a href="http://localhost:8000/csv_db">Csv with DataBase</a></li>
+		    <li><a href="http://localhost:8000/flash_message">Flash Message</a></li>
+		    <li><a href="http://localhost:8000/admin">Admin</a></li>
+		    <li><a href="">...</a></li>
+		    <li><a href="">Serialization</a></li>
+		    <li><a href="">File uploading</a></li>
+		    <li><a href="">Signals</a></li>
+		    <li><a href="">South</a></li>
+		    <li><a href="">Language pl/en</a></li>
+		    <li><a href="">Html/Css/Template Fun</a></li>
+		    <li><a href="">It is {% now "jS F Y H:i" %}</a></li>
+		    <li><a href="">My Music</a></li>
+		    <li><a href="">Search Engine</a></li>
+  		</ol>
+	</div>
+
+
+	<div id="content">
+
+		{% block content %}
+
+		{% endblock %}
+
+	</div>
+
+
+	<div id="footer"> Template design by <a href="http://localhost:8000/admin">Admin</a>.<br>
+	© All your copyright information here.
+	</div>
+
+</body>
+</html>

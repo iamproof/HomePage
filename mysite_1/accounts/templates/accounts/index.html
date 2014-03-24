@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+	<h2><a href="">Account: {{ user.username }}</a></h2>
+	  <p class="postdata"> Joined on {{ user.date_joined }} || Last login {{ user.last_login }}</p>
+	  <p>If you want to add additional information or change existing once<a href="{% url 'accounts:edit' %}"> click here.</a></p>
+
+	  <div id="info">
+
+		  <p> <h3> First name: </h3> {{ user.first_name}} </p>
+		  <p> <h3> Last name: </h3> {{ user.last_name }} </p>
+		  <p> <h3> Email: </h3> {{ user.email }} </p>
+		  <p> <h3> Staff status: </h3>
+		  		   {% if user.is_staff %}
+		  		   		staff member
+		  		   {% else %}
+		  		   		regular user
+		  		   {% endif %}</p>
+		  <p> <h3> Birth year: </h3> {{ user.info.birth_year }} </p>
+		  <p> <h3> Favorite music: </h3> {{ user.info.favorite_music }}</p>
+		  <p> <h3> Favorite color: </h3> {{ user.info.favorite_colors }} </p>
+		  <p> <h3> Sex: </h3> {{ user.info.sex }}</p>
+
+	  </div>
+
+	  <div id="picture"> </div>
+
+	  <div id="additional_info">
+	  	<p> <h3> Favorite Sports: </h3> {{ user.info.favorite_sports }} </p>
+	  	<p> <h3> Additional Information: </h3> {{ user.info.about }} </p>
+	  </div>
+
+	  
+
+{% endblock %}
