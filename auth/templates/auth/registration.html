@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<h2><a href="">Registration</a></h2>
+	<h2>{% if info %} {{ info }} {% endif %}</h2>
+	<p> You need to fill every form.</p>
+
+
+	<div id="registration">
+		<form id="form" method="post">{% csrf_token %}
+			<table>
+
+			<tr>
+			<th><label for="id_username">Username:</label></th>
+			<td><input id="id_username" maxlength="30" name="username" type="text"/><span class="helptext">&nbsp;&nbsp;&nbsp;Required 30 characters or fewer. Letters,digits and @/./+/-/_ only.</span></td></tr>
+
+			<tr><th><label for="id_email">Email:</label></th><td><input id="id_email" name="email" type="email"/></td></tr>
+
+			<tr><th><label for="id_first_name">First Name:</label></th><td><input id="id_first_name" name="first_name" type="text"/></td></tr>
+
+			<tr><th><label for="id_last_name">Last Name:</label></th><td><input id="id_last_name" name="last_name" type="text"/></td></tr>
+
+			<tr><th><label for="id_password1">Password:</label></th><td><input id="id_password1" name="password1" type="password"/></td></tr>
+
+			<tr><th><label for="id_password2">Password confirmation: &nbsp;</label></th><td><input id="id_password2" name="password2" type="password"/><span class="helptext"> &nbsp;&nbsp;Enter the same password as above, for verification.</span></td>
+			</tr>
+
+			</table>
+	</div>
+			<input id="input" type="submit" value="Register"/>
+			<button id="input" type="reset">Reset</button>
+		</form>
+			
+
+{% endblock %}

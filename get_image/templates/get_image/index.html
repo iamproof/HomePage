@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	
+	<h2><a href=""> Web Image Scraping (wallbase.cc) </a></h2>
+	<p>Finding cool wallpapers using python(e.g. urllib.request, re library). Just type subject that You find interesting, for example: "audi r8" or "lake mountain", and You will get 3 random generated wallpapers! (Algorythm finds 6 wallpepers from the subject you type, and show to you 3 random selected from those 6. You need to remember that search engine on the site is in english, so don't count on Non english words). If You had no results, this mean you type, non english letter, or less then 6 wallpapers have been found.<br>Search engine is from <a href="http://wallbase.cc/">http://wallbase.cc/</a> - one of the best wallpapers portal. Have Fun and visit http://wallbase.cc/ !</p>
+
+
+	<form action="" method="post"> {% csrf_token %}
+	{{ form.as_p }}
+	<!-- <input type="submit" value="Submit" /> -->
+	</form>
+
+	{% if pictures %}
+		{% for pic in pictures %}
+			<a href="{{ pic }}"><img src="{{ pic }}"></a>
+		{% endfor %}
+	{% endif %}
+	
+
+	
+	{% if pictures %}
+	<p>IMPORTENT: If for some reasons images don't show, just copy and paste links to your adress bar.</p>
+		{% for pic in pictures %}
+
+			<p><b> {{ pic }} </b></p>
+
+		{% endfor %}
+	{% endif %}
+
+
+{% endblock %}

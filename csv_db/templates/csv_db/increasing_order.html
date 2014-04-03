@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2><a href="/csv_db/">Csv with Database</a></h2>
+  <p class="postdata"> Posted on 01.01.05 by <a href="">Author: shades</a></p>
+  <p> List of all the countries in the world from <a href="http://www.csvfiles.net/">http://www.csvfiles.net/</a>.<br>
+  Using Csv file to import all the data to django database and displaying some of the results on this site. You can sort all the data in decreasing or increasing order, just click one of the table heading.<br>
+  You can also download csv file with all the data <a href="/csv_db/csv_file/">here</a>, from my database.</p>
+
+	<table id="Csv">
+		<tr>
+  			<th id="nav"><a href="/csv_db/-Common_Name/">Common Name</a></th>
+  			<!-- <th id="nav"><a href="">Common Name</a></th> -->
+  			<th id="nav"><a href="/csv_db/-Formal_Name/">Formal Name</th>		
+  			<th id="nav"><a href="/csv_db/-Type/">Type</th>
+  			<!-- <th>Sub Type</th>
+  			<th>Sovereignty</th> -->
+  			<th id="nav"><a href="/csv_db/-Capital/">Capital</th>
+  			<!-- <th>Currency Code</th> -->
+  			<th id="nav"><a href="/csv_db/-Currency_Name/">Currency Name</a></th>
+  			<th id="nav"><a href="/csv_db/-Telephone_Code/">Telephone Code</th>
+  			<th id="nav"><a href="/csv_db/-Letter_Code/">Letter Code</th>
+  			<!-- <th>ISO Number</th> -->
+  			<th id="nav"><a href="/csv_db/-Country_Code_TLD/">Country Code TLD</th>
+  		</tr>
+  		{% for country in full_list %}
+		<tr>
+        <td>{{ country.Common_Name }}</td>
+        <td>{{ country.Formal_Name }}</td>
+        <td>{{ country.Type }}</td>
+        <td>{{ country.Capital }}</td>
+        <td>{{ country.Currency_Name }}</td>
+        <td>{{ country.Telephone_Code }}</td>
+        <td>{{ country.Letter_Code }}</td>
+        <td>{{ country.Country_Code_TLD }}</td>
+  		</tr>
+  		{% endfor %}
+	</table>
+
+
+{% endblock %}

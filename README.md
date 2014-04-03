@@ -1,4 +1,0 @@
-HomePage
-========
-
-Python/Django project

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+	<h2><a href="">About the Polls</a></h2>
+  	<p>A couple of polls, You can vote more than just once in one of the polls. You can see how results are changing and how they get displayed in correct order. Have fun voting on polls. (A lot of fun with forms and database)</p>
+
+	<h2><a href="">Polls</a></h2>
+		<p class="postdata"> Posted on 01.01.05 by <a href="">Author: shades</a></p>
+		<p>
+		{% if latest_poll_list %}
+	<ul>
+	{% for poll in latest_poll_list %}
+    <li><a href="{% url 'polls:detail' poll.id %}">{{ poll.question }}</a></li>
+	{% endfor %}
+	</ul>
+	{% else %}
+	<p>No polls are available.</p>
+	{% endif %}
+	</p>
+
+
+{% endblock %}

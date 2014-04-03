@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<h2><a href=""> News (Web Scraping)</a></h2>
+	<p>Sample of web scraping using python(e.g. urllib.request, re library). Every time you refresh the site it will update the status from nba.com, so You will always be up to date with nba news and articles.<br>
+	The second sample is from main stock exchange site. I chose 5 stock companies in this example, and every time you refresh the page You will see the latest stock prizes of those firms, so You can follow your investments. If you want to see orginal portals, just click on the headers.</p>
+	<br><br>
+
+	<div class="nba_news">
+	<h2><a href="http://www.nba.com/"> Nba News (www.nba.com)</a></h2>
+	{% for i, j, k in nba_news %}
+		
+		<p class="postdata"> Posted on {{ k }}</p>
+		<p> {{ j }}.<br>Further reading:<a href="{{ i }}"> Link </a></p><br>
+	{% endfor %}
+	</div>
+
+
+	<div class="stocks_news">
+	<h2><a href="http://www.gpw.pl/"> Stock News (www.gpw.pl)</a></h2>
+	<p>Stock companies:</p>
+	<ul>
+	{% for st in stock %}
+		<li>
+		{% for i in st %}
+			{{ i }}
+		{% endfor %}
+		</li>
+	{% endfor %}
+	</ul>
+	</div>	
+
+
+{% endblock %}
