@@ -11,9 +11,7 @@ class SearchForm(forms.Form):
 
 def scrabble_words(search):
 	words = dict()
-	# path = os.getcwd()+"/scrabble/scrabble_words.data"
-	#/var/lib/openshift/533495c2e0b8cd050b000051/app-root/runtime/repo/wsgi/openshift
-	with open("/var/lib/openshift/533495c2e0b8cd050b000051/app-root/runtime/repo/wsgi/openshift/scrabble/scrabble_words.data", mode = "rb") as plik:
+	with open(".../scrabble/scrabble_words.data", mode = "rb") as plik:
 		example = pickle.load(plik)
 
 	letters = search
