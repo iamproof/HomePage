@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     url(r'^polls/', include('polls.urls', namespace="polls")), # instance namespace polls
     url(r'^flash_message/', include('flash_message.urls', namespace="flash_message")),
     url(r'^csv_db/', include('csv_db.urls', namespace="csv_db")),
+    url(r'^scrabble/', include('scrabble.urls', namespace="scrabble")),
     url(r'^admin/', include(admin.site.urls)),
     # url(r'^$', 'openshift.views.home', name='home'),
 )

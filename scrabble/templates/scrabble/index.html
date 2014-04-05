@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	
+	<h2><a href=""> Scrabble Dictionary </a></h2>
+		<p>English scrabble dictionary. Just type letters that you need to use, and program display available words from english dictionary from <a href="http://www-01.sil.org/linguistics/wordlists/english/">http://www-01.sil.org/linguistics/wordlists/english/</a>. If you search in web for other scrabble dictionaries that can find more or less available words, this happens because they use different list of english words.<br></p>
+
+	<form action="" method="post"> {% csrf_token %}
+	{{ form.as_p }}
+	<!-- <input type="submit" value="Search" /> -->
+	</form>
+
+	{% if words %}
+
+		<p><h3>Two letters words:</h3><br><em>{% if not words.2 %} --- {% endif %}{% for i in words.2 %} {% cycle '<strong style="color: white;"> ' '<strong style="color: #99CC33;">' '<strong style="color: #993399;"> '%}{{ i }} &nbsp;&nbsp; {% endfor %}</em></strong></p>
+		<p><h3>Three letters words:</h3><br><em>{% if not words.3 %} --- {% endif %} {% for i in words.3 %} {% cycle '<strong style="color: white;">' '<strong style="color: #99CC33;">' '<strong style="color: #993399;">'%}{{ i }} &nbsp;&nbsp;{% endfor %}</em></strong></p>
+		<p><h3>Four letters words:</h3><br><em>{% if not words.4 %} --- {% endif %} {% for i in words.4 %} {% cycle '<strong style="color: white;"> ' '<strong style="color: #99CC33;">' '<strong style="color: #993399;">'%}{{ i }} &nbsp;&nbsp;{% endfor %}</em></strong></p>
+		<p><h3>Five letters words:</h3><br><em>{% if not words.5 %} --- {% endif %} {% for i in words.5 %} {% cycle '<strong style="color: white;"> ' '<strong style="color: #99CC33;">' '<strong style="color: #993399;">'%}{{ i }} &nbsp;&nbsp;{% endfor %}</em></strong></p>
+		<p><h3>Six letters words:</h3><br><em>{% if not words.6 %} --- {% endif %} {% for i in words.6 %} {% cycle '<strong style="color: white;"> ' '<strong style="color: #99CC33;">' '<strong style="color: #993399;">'%}{{ i }} &nbsp;&nbsp;{% endfor %}</em></strong></p>
+		<p><h3>Seven letters words:</h3><br><em>{% if not words.7 %} --- {% endif %} {% for i in words.7 %} {% cycle '<strong style="color: white;"> ' '<strong style="color: #99CC33;">' '<strong style="color: #993399;">'%}{{ i }} &nbsp;&nbsp;{% endfor %}</em></strong></p>
+		
+	{% endif %}
+
+{% endblock %}
