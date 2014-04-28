@@ -25,7 +25,9 @@ def detail(request, poll_id):
 def results(request, poll_id):
     poll = get_object_or_404(Poll, pk=poll_id)
     decreasing_poll = poll.choice_set.order_by('-votes')
-    return render(request, 'polls/results.html', {'poll': poll, 'decreasing_poll': decreasing_poll})
+    lista = poll.choice_set.all()
+    average = len(lista) * [(sum([i.votes for i in lista]) ) / (len(lista))]
+    return render(request, 'polls/results.html', {'poll': poll, 'decreasing_poll': decreasing_poll, 'lista': lista, 'average': average})
 
 # class IndexView(generic.ListView):
 #     model = Poll

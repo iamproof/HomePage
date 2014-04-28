@@ -3,7 +3,10 @@
 {% block content %}
 	
 	<h2><a href=""> Scrabble Dictionary </a></h2>
-		<p>English scrabble dictionary. Just type letters that you need to use, and program display available words from english dictionary from <a href="http://www-01.sil.org/linguistics/wordlists/english/">http://www-01.sil.org/linguistics/wordlists/english/</a>. If you search in web for other scrabble dictionaries that can find more or less available words, this happens because they use different list of english words.<br></p>
+		<p>English scrabble dictionary. Just type letters that you need to use, and program display available words from english dictionary from <a href="http://www-01.sil.org/linguistics/wordlists/english/">http://www-01.sil.org/linguistics/wordlists/english/</a>. You need to remember that results can be different depend on the dictionary that is being used, so it's normal that other dictionarys show slightly different results.<br>
+		If you are interested in the "view.py", and the function I use, You can look at the repository, <a href="https://github.com/JacekKarnasiewicz/HomePage/blob/master/scrabble/views.py">here</a>.<br><br>
+		Additional Information:<br>
+		First version of this algorythm needed alomost 5.5 minutes to display results.<br>Second version needed up to 30 seconds, and the 3rd version of algorythm need 0.5 second to display results.</p>
 
 	<form action="" method="post"> {% csrf_token %}
 	{{ form.as_p }}

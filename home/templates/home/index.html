@@ -3,27 +3,38 @@
 {% block content %}
 <div>	
 	<h2><a href=""> Jacek Karnasiewicz Home Page </a></h2>
-	<p style="color: white;"><strong><em>The technology used on the site: Python 3.3 with Django 1.6, South, Html5/Css3, Openshift and GitHub.<br>
-	GitHub repository of the site, <a href="">Here</a>.</em></strong></p>
+	<p style="color: white;"><strong><em>The technology used on the site: Python 3.3 with Django 1.6, South, Html5/Css3, JavaScript (e.g. HighchartsJS), Openshift and GitHub.<br>
+	GitHub repository of the site, <a href="https://github.com/JacekKarnasiewicz/HomePage/tree/master">Here</a>.</em></strong></p>
 
 	<div id="home">	
 		<div id="home_left"><img src="../../../static/images/django.png"></div>
-		<div id="home_right"><h3> About The Site </h3><br>On the navigation bar we can find small Python and Django projects. In addition almost every app use database (to display, create, add or remove objects from and to database).There is no django 3rd party apps, I created every app by myself. You need to be logged in if you want see additional app or additional options, for example your profile page or capability to add comments to posts in blog. You can also find a lot of Css3 usage in those apps (e.g. mouse over pictures).
+		<div id="home_right"><h3> About The Site </h3><br>On the navigation bar we can find small Python and Django projects. In addition almost every app use database (to display, add or remove objects from and to database).There is no django 3rd party apps, I created every app by myself. You need to be logged in if you want see additional app or additional options, for example your profile page or capability to add comments to posts in blog. You can also find a JavaScript/HighchartsJS usage, <a href="{% url 'polls:index' %}">here</a>.
 		</div>
 	</div>
 
-	<!-- <div style="clear: right;"></div> -->
 	
 	<div id="home">
 		<div id="home_left"><img src="../../../static/images/about.jpg"></div>
-		<div id="home_right"><h3> About Me </h3><br>University of Wroclaw, Bachelor's Degree in Mathematics. Interested in Python Languange, Django Development, Mathematics, Computer Science, and New Technology.I also enjoy Basketball, Gym, Music, and Pc Games.
+		<div id="home_right"><h3> About Me </h3><br>University of Wroclaw, Bachelor's Degree in Mathematics. Interested in Python Languange, Django Development, Mathematics, Computer Science, and New Technology. I also enjoy Basketball, Gym, Music, and Pc Games, and have a lot of Passion for Science (e.g. Astronomy, Nanotechnology, Renewable energy).
+		</div>
+	</div>
+
+
+	<div id="home">
+		<div id="home_left"><img src="../../../static/images/cool_places.jpg"></div>
+		<div id="home_right"><h3> Interesting Places </h3><br>
+		<a href="http://www.wolframalpha.com/">WolframAlpha</a><br>
+		<a href="https://www.youtube.com/channel/UC4a-Gbdw7vOaccHmFo40b9g">Khan Academy</a><br>
+		<a href="http://hubblesite.org/gallery/">Hubble Teleskop</a><br>
+		<a href="http://potreningu.pl/cwiczenia/mezczyzna">Health And Exercises</a><br>
+		<a href="http://wallbase.cc/#">Wallpapers</a><br>
 		</div>
 	</div>
 
 
 	<div id="home">
 		<div id="home_left"><img src="../../../static/images/never_forget.jpg"></div>
-		<div id="home_right"><h3> Contact Information </h3><br>Email: karnasiewicz.jacek@gmail.com<br>Tel: 793 90 63 20<br>CV: <a href=""> plik </a>
+		<div id="home_right"><h3> Contact Information </h3><br>Email: karnasiewicz.jacek@gmail.com<br>Phone: 793 90 63 20<br>CV: <a href="../../../static/KarnasiewiczJacek(CV).pdf"> CV File </a>
 		</div>
 	</div>
 

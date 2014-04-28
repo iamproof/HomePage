@@ -2,18 +2,92 @@
 
 {% block content %}
 
-<h2><a href="">{{ poll.question }}</a></h2>
-<p class="postdata"> Posted on {{ poll.pub_date }}</p>
-<p>
-<ul>
-<!-- {% for choice in poll.choice_set.all %} -->
-<!-- {% endfor %} -->
-{% for choice in decreasing_poll %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
-</ul>
+	<h2><a href="">{{ poll.question }}</a></h2>
+	<p class="postdata"> Posted on {{ poll.pub_date }}</p>
+	<p>
 
-<a href="{% url 'polls:detail' poll.id %}">Vote again?</a>
-</p>
+	<div id="container" style="width:600px; height:300px; margin: 50px auto 50px auto;"></div>
+
+	<ul style="width:600px; height:300px; margin: 50px auto 50px auto;">
+
+	{% for choice in decreasing_poll %}
+	    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}
+		</li>
+	{% endfor %}
+	<a href="{% url 'polls:detail' poll.id %}">Vote again?</a>
+	</ul>
+
+	</p>
+
+
+
+
+
+
+
+	<script>
+		$(function () { 
+		    $('#container').highcharts({
+		        chart: {
+		        	borderWidth: 1,
+		        	borderColor: '#CCC',
+		        	backgroundColor: '#404040',
+		            type: 'column'
+		        },
+		        title: {
+		            text: '{{ poll.question }}',
+		            style: {
+		            	color: '#CCC'
+		            }
+		        },
+		        xAxis: {
+		            categories: [
+						{% for choice in lista %}
+		    				'{{ choice.choice_text|truncatechars:25 }}',
+		    			{% endfor %}
+		    			],
+		    		labels: {
+	         			style: {
+	            		color: '#CCC'
+	        		}
+	        		},
+		        },
+		        yAxis: {
+		            title: {
+		                text: 'Votes',
+		                style: {
+	            			color: '#CCC'
+	        			}
+		            }
+
+		        },
+		        series: [{
+		            name: 'Votes',
+		            color: '#99CC33',
+		            data: [
+						{% for choice in lista %}
+		    				{{ choice.votes }},
+		    			{% endfor %}
+		    			]
+		        },
+		        
+		        {
+		            name: 'Average',
+		            data: [
+						{% for i in average %}
+		    				{{ i }},
+		    			{% endfor %}
+		    			]
+		        },
+		        ],
+
+		        legend: {
+		        	itemStyle:{'color': '#CCC'}
+		        }
+
+		    	});
+		});
+	</script>
+
 
 {% endblock %}

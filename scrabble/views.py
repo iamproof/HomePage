@@ -2,7 +2,6 @@ from django.shortcuts import render
 import pickle
 import itertools
 from django import forms
-# import os
 
 
 class SearchForm(forms.Form):
@@ -11,7 +10,9 @@ class SearchForm(forms.Form):
 
 def scrabble_words(search):
 	words = dict()
-	with open(".../scrabble/scrabble_words.data", mode = "rb") as plik:
+	# path = os.getcwd()+"/scrabble/scrabble_words.data"
+	#/var/lib/openshift/533495c2e0b8cd050b000051/app-root/runtime/repo/wsgi/openshift
+	with open("/var/lib/openshift/533495c2e0b8cd050b000051/app-root/runtime/repo/wsgi/openshift/scrabble/scrabble_words.data", mode = "rb") as plik:
 		example = pickle.load(plik)
 
 	letters = search
@@ -19,7 +20,7 @@ def scrabble_words(search):
 	for n in range(2,len(letters)+1):
 		perm = list(itertools.permutations(letters, n))
 		perm = ["".join(i) for i in perm]
-		nazwa = list(set([i for i in perm if i in example[n-2]]))
+		nazwa = list(set([ i for i in perm if i in example[n][i[0]] ]))
 		words[n] = nazwa
 
 	return words

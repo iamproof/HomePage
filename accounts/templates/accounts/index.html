@@ -5,7 +5,7 @@
 
 	<h2><a href="">Account: {{ user.username }}</a></h2>
 	  <p class="postdata"> Joined on {{ user.date_joined }} || Last login {{ user.last_login }}</p>
-	  <p>"My Account" app created for only logged in users (using @login_required in views, if you are interesting in the views.py, You can look at the repository of my site, <a href="https://github.com/JacekKarnasiewicz/HomePage/blob/master/mysite_1/accounts/views.py">here</a>). If you want to add additional information or change existing once<a href="{% url 'accounts:edit' %}"> click here.</a></p>
+	  <p>"My Account" app created for only logged in users (using @login_required in views, If you are interested in the "view.py", You can look at the repository, <a href="https://github.com/JacekKarnasiewicz/HomePage/blob/master/accounts/views.py">here</a>).<br> If you want to add additional information or change existing once<a href="{% url 'accounts:edit' %}"> click here.</a></p>
 
 	  <div id="info">
 

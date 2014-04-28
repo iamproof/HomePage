@@ -5,10 +5,10 @@
 	
 
 	<h2><a href="">About the Flash Message</a></h2>
-  	<p>Using Python random library, and Django flash messages with databse.<br>Our orange friend show random information about content of the site, for example the posts in the blog or different polls with random answers, and also a couple of useful information about logged in or logged out users. The maximum of rows are 5, so keep pushing refresh(f5) or the title "About the Flash Message".<br>If you are interesing in the "view" you can check that <a href="https://github.com/JacekKarnasiewicz/HomePage/blob/master/mysite_1/flash_message/views.py">here</a>.</p>
+  	<p>Using Python random library, Django flash messages with databse and jQuery.<br>Our orange friend show random information about content of the site, for example the posts in the blog or different polls with random answers, and also a couple of useful information about logged in or logged out users. The maximum of rows are 5, so keep pushing refresh(f5) or the title "About the Flash Message".<br>If you are interested in the "view.py", you can check that <a href="https://github.com/JacekKarnasiewicz/HomePage/blob/master/flash_message/views.py">here</a>.<br>
+  	<span id="fox" style="color:#999;"> Click this statement, to toggle orange fox.</span></p><br>
 
 	<div id="flash_message">
-		<a href="{% url 'flash_message:index' %}"></a>
 	</div>
 
 	<div>
@@ -21,5 +21,14 @@
 	{% endif %}
 	</div>
 
+	<script>
+		$(document).ready(function(){
+	  		$("#fox").click(function(){
+	  			$('#flash_message').toggle();
+	  		});
+	  	});
+	</script>
+
 	
 {% endblock %}
+

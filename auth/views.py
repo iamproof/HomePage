@@ -81,7 +81,7 @@ def registration(request):
 				return render(request, 'auth/registration.html', {'form': RegistrationForm(), 'info': 'This user is not available.'})
 			user.save()	
 
-			send_mail('Django registration confirmation', 'Here is the confirmation number {}.'.format(number), 'karnasiewicz.jacek@gmail.com',
+			send_mail('Django registration confirmation', 'Please visit http://jacek-karnasiewicz.rhcloud.com/auth/confirmation/ and here is the confirmation number {}'.format(number), 'karnasiewicz.jacek@gmail.com',
     				 [email], fail_silently=False)
 			return redirect('auth:confirmation')
 		else:			

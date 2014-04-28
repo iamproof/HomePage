@@ -1,6 +1,6 @@
 HomePage
 ========
 
-Python/Django projects
+Python/Django project
 
 jacek-karnasiewicz.rhcloud.com
