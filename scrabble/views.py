@@ -70,7 +70,7 @@ from django import forms
 class SearchForm(forms.Form):
 	letters = forms.CharField(max_length=7)
 
-
+# Funkcja z której korzystam już na serwerze, żeby wyszukać słowa z podanych liter.
 def scrabble_words(search):
 	words = dict()
 	# path = os.getcwd()+"/scrabble/scrabble_words.data"
