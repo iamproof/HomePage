@@ -4,12 +4,9 @@ import itertools
 from django import forms
 
 
-# import pickle
-
 # Wczytanie słownika z pliku txt.
-
 # with open("wordsEn.txt") as sja:
-# 	sja = sja.read()
+# 		sja = sja.read()
 
 # sja = sja.splitlines()
 
@@ -18,38 +15,38 @@ from django import forms
 
 
 # Segregacja słów - cały ten zabieg wczesnej segregacji słów ze słownika angielskiego jest potrzebny by nasz algorytm
-#                   wyszukiwał słowa w 0.5 sekundy, a nie w 5 minut.( słów w słowniku jest około 109-110 tysięcy )
+# wyszukiwał słowa w 0.5 sekundy, a nie w 5 minut.( słów w słowniku jest około 109-110 tysięcy )
 # for i in sja:
 # 	if len(i)==2:
 # 		first_letter = i[0]
 # 		if first_letter not in data[2]:
-# 			data[2].update({first_letter: [i]})
+# 		data[2].update({first_letter: [i]})
 # 		else:
-# 			data[2][first_letter].append(i)	
+# 			data[2][first_letter].append(i)
 # 	elif len(i)==3:
 # 		first_letter = i[0]
 # 		if first_letter not in data[3]:
 # 			data[3].update({first_letter: [i]})
 # 		else:
-# 			data[3][first_letter].append(i)	
+# 			data[3][first_letter].append(i)
 # 	elif len(i)==4:
 # 		first_letter = i[0]
 # 		if first_letter not in data[4]:
 # 			data[4].update({first_letter: [i]})
 # 		else:
-# 			data[4][first_letter].append(i)	
+# 			data[4][first_letter].append(i)
 # 	elif len(i)==5:
 # 		first_letter = i[0]
 # 		if first_letter not in data[5]:
 # 			data[5].update({first_letter: [i]})
 # 		else:
-# 			data[5][first_letter].append(i)	
+# 			data[5][first_letter].append(i)
 # 	elif len(i)==6:
 # 		first_letter = i[0]
 # 		if first_letter not in data[6]:
 # 			data[6].update({first_letter: [i]})
 # 		else:
-# 			data[6][first_letter].append(i)	
+# 			data[6][first_letter].append(i)
 # 	elif len(i)==7:
 # 		first_letter = i[0]
 # 		if first_letter not in data[7]:

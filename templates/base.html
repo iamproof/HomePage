@@ -10,11 +10,33 @@
 	</script>
 	<script src="http://code.highcharts.com/highcharts.js"></script>
 
+	<script>
+		$(document).ready(function(){
+			$('.slider img:gt(0)').hide();
+
+			setInterval(function () {
+		    $('.slider :first-child').fadeOut()
+		                             .next('img')
+		                             .fadeIn()
+		                             .end()
+		                             .appendTo('.slider');
+			}, 4000);
+		});
+	</script>
+
 </head>
 
 <body>
 
 	<div id="top">
+		<div class="slider">
+			<img src="../static/images/1.jpg">
+			<img src="../static/images/2.jpg">
+			<img src="../static/images/3.png">
+			<img src="../static/images/4.png">
+			<img src="../static/images/5.png">
+			<img src="../static/images/6.png">
+		</div>
 	</div>
 
 

@@ -6,7 +6,7 @@ from urllib.request import Request
 from urllib.request import urlopen
 import re
 import random
-
+import webbrowser
 
 class SearchForm(forms.Form):
 	search = forms.CharField(max_length=100)

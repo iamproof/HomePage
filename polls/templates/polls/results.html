@@ -25,12 +25,16 @@
 
 
 
-	<script>
+<script>
+	$(document).ready(function(){
 		$(function () { 
 		    $('#container').highcharts({
 		        chart: {
 		        	borderWidth: 1,
+		        	/*borderColor: '#99CC33',*/
 		        	borderColor: '#CCC',
+		        	/*backgroundColor: '#121212',*/
+		        	/*backgroundColor: '#545454',*/
 		        	backgroundColor: '#404040',
 		            type: 'column'
 		        },
@@ -41,6 +45,7 @@
 		            }
 		        },
 		        xAxis: {
+		            /*categories: ['Apples', 'Bananas', 'Oranges']*/
 		            categories: [
 						{% for choice in lista %}
 		    				'{{ choice.choice_text|truncatechars:25 }}',
@@ -49,6 +54,7 @@
 		    		labels: {
 	         			style: {
 	            		color: '#CCC'
+	            		/*font: '11px Trebuchet MS, Verdana, sans-serif'*/
 	        		}
 	        		},
 		        },
@@ -87,7 +93,8 @@
 
 		    	});
 		});
-	</script>
+	});
+</script>
 
 
 {% endblock %}
