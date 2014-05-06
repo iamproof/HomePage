@@ -19,5 +19,4 @@ urlpatterns = patterns('',
     url(r'^csv_db/', include('csv_db.urls', namespace="csv_db")),
     url(r'^scrabble/', include('scrabble.urls', namespace="scrabble")),
     url(r'^admin/', include(admin.site.urls)),
-    # url(r'^$', 'openshift.views.home', name='home'),
 )
