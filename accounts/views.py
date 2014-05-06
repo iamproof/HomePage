@@ -11,11 +11,7 @@ def index(request):
 @login_required
 def edit(request):
 	if request.method == "POST":
-		# form = InfoForm(request.POST or None, instance=info)
 		form = InfoForm(request.POST)
-		# edit_profile_form = EditProfileForm(request.POST or None,
-        # current_user=request.user, instance=profile)
-		
 		if form.is_valid():
 			user = User.objects.get(username=request.user)
 			info, created = Info.objects.get_or_create(user=user)

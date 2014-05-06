@@ -1,12 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django import forms
-#from django.forms import ModelForm
 from django.forms.extras.widgets import SelectDateWidget
 
 
 
-# BIRTH_YEAR_CHOICES = ('1980', '1981', '1982')
 BIRTH_YEAR_CHOICES = (range(1900,2014))
 FAVORITE_COLORS_CHOICES = ( ('blue', 'Blue'),
                             ('green', 'Green'),
@@ -47,12 +45,9 @@ class Info(models.Model):
     favorite_sports = models.CharField(max_length=150, blank=True, null=True)
     about = models.TextField(blank=True)
 
-    # def __str__(self):
-    #   return self.user.username
 
 
-
-class InfoForm(forms.Form): #forms.ModelForm): 
+class InfoForm(forms.Form): 
     birth_year = forms.DateField(widget=SelectDateWidget(years=BIRTH_YEAR_CHOICES), required=False)
     favorite_music = forms.ChoiceField(widget=forms.RadioSelect,
                             choices=FAVORITE_MUSIC_CHOICES, required=False)
@@ -62,7 +57,3 @@ class InfoForm(forms.Form): #forms.ModelForm):
     					    choices=SEX, help_text='A valid...', required=False)
     favorite_sports = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=FAVORITE_SPORTS_CHOICES, required=False)
     about = forms.CharField(widget=forms.Textarea, required=False)
-
-    # class Meta:
-    # 	model = Info
-    # 	fields = ["birth_year", "favorite_music", "favorite_colors", "sex", "about"]

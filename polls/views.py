@@ -29,38 +29,6 @@ def results(request, poll_id):
     average = len(lista) * [(sum([i.votes for i in lista]) ) / (len(lista))]
     return render(request, 'polls/results.html', {'poll': poll, 'decreasing_poll': decreasing_poll, 'lista': lista, 'average': average})
 
-# class IndexView(generic.ListView):
-#     model = Poll
-#     template_name = 'polls/index.html'
-#     context_object_name = 'latest_poll_list'
-
-#     def get_queryset(self):
-#     	"""
-#     	Return the last five published polls (not including those set to be
-#     	published in the future).
-#     	"""
-#     	return Poll.objects.filter(
-#         	pub_date__lte=timezone.now()
-#     		).order_by('-pub_date')[:5]
-
-
-# class DetailView(generic.DetailView):
-#     model = Poll
-#     template_name = 'polls/detail.html'
-
-#     def get_queryset(self):
-#         """
-#         Excludes any polls that aren't published yet.
-#         """
-#         return Poll.objects.filter(pub_date__lte=timezone.now())
-
-
-# class ResultsView(generic.DetailView):
-#     model = Poll
-#     template_name = 'polls/results.html'
-    
-
-
 def vote(request, poll_id):
 	p = get_object_or_404(Poll, pk=poll_id)  # gets the object with the primary key of poll_id from Poll
 	try:
@@ -78,4 +46,3 @@ def vote(request, poll_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
 		return HttpResponseRedirect(reverse('polls:results', args=(p.id,)))   
-        # '/polls/3/results/'

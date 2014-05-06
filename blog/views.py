@@ -7,7 +7,6 @@ from django.http import HttpResponseRedirect
 
 
 def index(request):
-	# posts = Post.objects.all()
 	posts = Post.objects.filter(published=True)
 	return render(request, 'blog/index.html', {'posts': posts})
 
@@ -19,7 +18,6 @@ def detail(request, slug):
 		if form.is_valid():
 			title = form.cleaned_data["title"]
 			comment = form.cleaned_data["comment"]
-			# author = form.cleaned_data["author"]
 			form = form.save(commit=False)
 			form.post_name = slug
 			if request.user.is_authenticated():

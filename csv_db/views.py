@@ -31,7 +31,6 @@ def import_csv_file():
 
 
 def index(request):
-	#import_csv_file()
 	full_list = CountryList.objects.all()
 	return render(request, "csv_db/index.html", {'full_list': full_list})
 

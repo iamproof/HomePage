@@ -21,13 +21,11 @@ class Post(models.Model):
 	def __str__(self):
 		return self.title
 
-	# def get_absolute_url(self):
-	# 	return reverse('blog.views.detail', args=[self.slug])
 
 class Comment(models.Model):
 	title = models.CharField(max_length=140)
 	post_name = models.CharField(max_length=140)
-	author = models.ForeignKey(User)# null=True, blank=True)
+	author = models.ForeignKey(User)
 	comment = models.TextField()
 	created = models.DateTimeField(auto_now_add=True)
 
@@ -38,7 +36,7 @@ class Comment(models.Model):
 class CommentForm(ModelForm):
 	class Meta:
 		model = Comment
-		fields = ["title", "comment"]#, "author"]
+		fields = ["title", "comment"]
 
 
 
