@@ -5,6 +5,7 @@ Python/Django project
 
 jacek-karnasiewicz.rhcloud.com
 
+Materialy na zajecia:
 https://www.youtube.com/watch?v=lvtfD_rJ2hE - dla Pani
 
 https://www.youtube.com/watch?v=mEH6tDLKcVU - pokaz
